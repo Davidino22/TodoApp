@@ -1,4 +1,5 @@
 import './App.css';
+import './clearButton.css';
 
 function ClearButton(props) {
   const { setTodos, todos } = props;

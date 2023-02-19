@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './todo.css';
-import { BiCheck } from 'react-icons/bi';
+import { FcCheckmark } from 'react-icons/fc';
 import { BiTrash } from 'react-icons/bi';
 import { BiPencil } from 'react-icons/bi';
 import { BiSave } from 'react-icons/bi';
 
-// set one use State to signify if we are editing
+// set one use State to signify if we are editing. As well to edit the input, new usestate
+// take mutltiple props to work with
 
 function Todo(props) {
   const { deleteTodo, handleCheckboxClick, todos, index, todo, setTodos } =
@@ -13,18 +14,34 @@ function Todo(props) {
   const [editing, setEditing] = useState(false);
   const [input, setInput] = useState(todo.value);
 
+  // change boolean gor ternary operator
   function toggleInput() {
     setEditing(!editing);
   }
 
+  // save new added value and map over array todos to set the todo value input
   function saveValue() {
-    const filteredtodos = todos.filter((item) => {
-      if (item.id !== todo.id) {
+    const updatedTodos = todos.map((item) => {
+      if (item.id === todo.id) {
+        return {
+          ...item,
+          value: input,
+        };
+      } else {
         return item;
       }
     });
-    console.log(filteredtodos);
+    setTodos(updatedTodos);
+    setEditing(false);
+    setInput(input);
   }
+
+  // working with ternary operator to work with input if needed
+  // one button for saving new input
+  // one button to delete todo
+  // one button to mark todo as completed
+  // one button to edit new todo
+  // the buttons for edit, delete and complete have their own onclick handlers
 
   return (
     <li className="todo">
@@ -54,7 +71,7 @@ function Todo(props) {
         <BiTrash />
       </button>
       <button onClick={() => handleCheckboxClick(index)}>
-        <BiCheck />
+        <FcCheckmark />
       </button>
       <button onClick={() => toggleInput()}>
         <BiPencil />

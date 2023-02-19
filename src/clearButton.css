@@ -1,0 +1,17 @@
+/* css for the button in the bottom which will delete completed todos*/
+
+.buttonClear {
+  padding: 14px;
+  background-color: #2562d8;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.buttonClearCompleted {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 20px;
+  margin-bottom: 40px;
+}

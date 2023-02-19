@@ -1,0 +1,15 @@
+/* css file for the input element and the add button */
+
+.inputValue {
+  font-size: 18px;
+  padding: 18px;
+  width: 300px;
+}
+
+.buttonAdd {
+  background-color: #2e67dfcd;
+  color: #eaf9ee;
+  border-radius: 8px;
+  margin-left: 18px;
+  padding: 18px;
+}

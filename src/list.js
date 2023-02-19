@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Todo from './todo.js';
+import './list.css';
 
 // render function where i map over the Todo array to create list items in an unorder list
 function ListTodos(props) {
@@ -20,6 +21,7 @@ function ListTodos(props) {
     setTodos(newTodo);
   };
 
+  //return over  filtered todos. Todo is a component
   return (
     <div className="todolist">
       <ul>

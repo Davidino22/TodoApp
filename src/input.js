@@ -8,7 +8,7 @@ import './input.css';
 function InputTodos(props) {
   const { todos, setTodos } = props;
   const [value, setValue] = useState('');
-  // put input values into todolist
+  // put input values into todolist, todo is an object with a value boolean and id
   const addTodo = (e) => {
     e.preventDefault();
     setTodos([
@@ -23,6 +23,7 @@ function InputTodos(props) {
     setValue(e.target.value);
   };
 
+  //input element with type text and a button to add the todo
   return (
     <div>
       <h1>Todo List</h1>

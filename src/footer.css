@@ -1,0 +1,22 @@
+/* css for the footer with the 3 buttons and one item */
+
+.footerButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.button {
+  background-color: #2562d8;
+  color: white;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}

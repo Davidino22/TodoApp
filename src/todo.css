@@ -5,16 +5,15 @@
 }
 
 .todo {
-  border: 2px solid red;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 1rem;
+  font-size: 30px;
 }
 
 ul {
   list-style-type: none;
-  border: 2px solid yellow;
+
   padding: 0;
   margin: 0;
   width: 100%;
@@ -22,8 +21,9 @@ ul {
 
 li {
   list-style: none;
-  padding: 0;
-  margin: 0;
+
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 18px;
 }
 
 .todo span {

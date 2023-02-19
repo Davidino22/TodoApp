@@ -20,7 +20,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid red;
 }
 .footer {
   display: flex;
@@ -28,31 +27,16 @@ body {
   background-color: #222228;
 }
 
-.buttonClear {
-  display: flex;
-  justify-content: center;
-}
-
-.inputValue {
-  width: 200px;
-  height: 20px;
-}
-
 .buttonAdd {
   background-color: #2e67dfcd;
   color: #eaf9ee;
-  border-radius: 3px;
+  border-radius: 8px;
   margin-left: 18px;
-  height: 30px;
+  padding: 24px;
 }
 
-.buttonCleardiv {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100px;
-  height: 50px;
-}
-
-.todolist {
-  width: 100%;
+.containerMid {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 40px;
 }
