@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import './App.css';
 import './footer.css';
+import ClearButton from './clearbutton';
 
 function counttodos(todo) {
   return {
@@ -11,7 +12,7 @@ function counttodos(todo) {
 
 // use effect to show whenever the array will change from completed todos to not completed
 function TodoCounter(props) {
-  const { todos, status, setStatus } = props;
+  const { todos, status, setStatus, setTodos } = props;
 
   const [notCompleted, setNotCompleted] = useState(0);
 
@@ -28,32 +29,34 @@ function TodoCounter(props) {
     setStatus(string);
   }
   // return all the todos as completed or not completed
-  // create buttons to set the status of the todos wich shoudl be showed
+  // create buttons to set the status of the todos wich should be showed
+  // put as well the componen clearcompleted inside
   return (
-    <div className="footerButtons">
-      <p> {notCompleted} items left</p>
+    <div className="todoCounter">
+      <p className="display"> {notCompleted} items left</p>
 
-      <button
-        disabled={status == 'All'}
-        onClick={() => changeStatus('All')}
-        className="button"
-      >
-        All
-      </button>
-      <button
-        disabled={status == 'Active'}
-        onClick={() => changeStatus('Active')}
-        className="button"
-      >
-        Active
-      </button>
-      <button
-        disabled={status == 'Completed'}
-        onClick={() => changeStatus('Completed')}
-        className="button"
-      >
-        Completed
-      </button>
+      <div className="counterButtons">
+        <button
+          onClick={() => changeStatus('All')}
+          className={`button ${status === 'All' ? 'btnClicked' : ''}`}
+        >
+          All
+        </button>
+        <button
+          onClick={() => changeStatus('Active')}
+          className={`button ${status === 'Active' ? 'btnClicked' : ''}`}
+        >
+          Active
+        </button>
+        <button
+          onClick={() => changeStatus('Completed')}
+          className={`button ${status === 'Completed' ? 'btnClicked' : ''}`}
+        >
+          Completed
+        </button>
+      </div>
+
+      <ClearButton todos={todos} setTodos={setTodos} />
     </div>
   );
 }

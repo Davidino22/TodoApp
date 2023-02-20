@@ -20,7 +20,8 @@ function Todo(props) {
   }
 
   // save new added value and map over array todos to set the todo value input
-  function saveValue() {
+  function saveValue(e) {
+    e.preventDefault();
     const updatedTodos = todos.map((item) => {
       if (item.id === todo.id) {
         return {
@@ -33,7 +34,6 @@ function Todo(props) {
     });
     setTodos(updatedTodos);
     setEditing(false);
-    setInput(input);
   }
 
   // working with ternary operator to work with input if needed
@@ -55,13 +55,13 @@ function Todo(props) {
           {todo.value}
         </span>
       ) : (
-        <form>
+        <form onSubmit={saveValue} className="todoForm">
           <input
             type="text"
             onChange={(e) => setInput(e.target.value)}
             value={input}
           ></input>
-          <button onClick={() => saveValue()}>
+          <button type="submit">
             <BiSave />
           </button>
         </form>

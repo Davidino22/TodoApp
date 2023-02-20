@@ -1,22 +1,26 @@
 /* css for the footer with the 3 buttons and one item */
 
-.footerButtons {
+.footer {
   display: flex;
   justify-content: space-between;
+
+  margin-top: 40px;
+}
+
+.todoCounter {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: row;
 }
 
 .button {
   background-color: #2562d8;
   color: white;
-  padding: 14px;
+  padding: 8px;
   border-radius: 8px;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
+.btnClicked {
+  background-color: #314877;
 }

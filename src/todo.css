@@ -31,3 +31,15 @@ li {
   justify-content: flex-start;
   display: flex;
 }
+
+.todoForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.todoForm input {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
