@@ -44,7 +44,10 @@ function InputTodos(props) {
             onChange={handleChange}
             className="inputValue"
           />
-          <button type="submit" className="buttonAdd">
+          <button
+            type="submit"
+            className={`buttonAdd ${lightMode ? 'buttonAddLight' : ''}`}
+          >
             Add Todo
           </button>
         </form>

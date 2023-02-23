@@ -42,7 +42,7 @@ function TodoApp() {
             filterettodos={filterettodos}
           />
         </div>
-        <div className="footer">
+        <div className={`footer ${lightMode ? 'footerLight' : ''}`}>
           <TodoCounter
             todos={todos}
             status={status}

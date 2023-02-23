@@ -22,5 +22,10 @@
 }
 
 .btnClicked {
-  background-color: #314877;
+  opacity: 0.5;
+}
+
+.buttonLight {
+  background-color: #94b5fbcd;
+  color: #2d322f;
 }

@@ -8,6 +8,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+
   font-size: 30px;
 }
 
@@ -22,7 +23,6 @@ ul {
 li {
   list-style: none;
 
-  border-bottom: 1px solid #ccc;
   margin-bottom: 18px;
 }
 
@@ -42,4 +42,34 @@ li {
 .todoForm input {
   font-size: 25px;
   margin-bottom: 8px;
+}
+
+.todoSpan {
+  color: white;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.todoSpanLight {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.todoSpanChecked {
+  text-decoration: line-through;
+  color: red;
+}
+
+@media only screen and (max-width: 550px) {
+  .todo {
+    font-size: 20px;
+  }
+
+  .todoForm {
+    font-size: 13px;
+  }
+
+  .todoForm input {
+    font-size: 18px;
+  }
 }

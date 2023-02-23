@@ -1,13 +1,5 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  border: 2px solid green;
+  height: 100%;
 }
 
 .container {
@@ -36,6 +28,10 @@ body {
   background-color: #222228;
 }
 
+.footerLight {
+  background-color: #50505f;
+}
+
 .buttonAdd {
   background-color: #2e67dfcd;
   color: #eaf9ee;
@@ -55,9 +51,14 @@ body {
   height: 100vh;
   background-color: #373742;
   margin: 0;
-  border: 2px solid red;
 }
 
 .AppLight {
   background-color: white;
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    width: 300px;
+  }
 }

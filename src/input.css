@@ -19,3 +19,14 @@
   top: 15px;
   right: 15px;
 }
+
+.buttonAddLight {
+  background-color: #94b5fbcd;
+  color: #2d322f;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 550px) {
+   .inputValue{
+    font-size: 13px;
+  }}

@@ -4,6 +4,7 @@ import { FcCheckmark } from 'react-icons/fc';
 import { BiTrash } from 'react-icons/bi';
 import { BiPencil } from 'react-icons/bi';
 import { BiSave } from 'react-icons/bi';
+import { useThemeContext } from './themeProvider.js';
 
 // set one use State to signify if we are editing. As well to edit the input, new usestate
 // take mutltiple props to work with
@@ -13,6 +14,7 @@ function Todo(props) {
     props;
   const [editing, setEditing] = useState(false);
   const [input, setInput] = useState(todo.value);
+  const lightMode = useThemeContext();
 
   // change boolean gor ternary operator
   function toggleInput() {
@@ -47,10 +49,9 @@ function Todo(props) {
     <li className="todo">
       {!editing ? (
         <span
-          style={{
-            color: todo.isChecked ? 'red' : 'white',
-            textDecoration: todo.isChecked ? 'line-through' : 'none',
-          }}
+          className={`todoSpan ${lightMode ? 'todoSpanLight' : ''} ${
+            todo.isChecked ? 'todoSpanChecked' : ''
+          }`}
         >
           {todo.value}
         </span>
@@ -67,13 +68,15 @@ function Todo(props) {
         </form>
       )}
 
-      <button onClick={() => deleteTodo(index)}>
-        <BiTrash />
-      </button>
       <button onClick={() => handleCheckboxClick(index)}>
         <FcCheckmark />
       </button>
-      <button onClick={() => toggleInput()}>
+
+      <button onClick={() => deleteTodo(index)} style={{ cursor: 'pointer' }}>
+        <BiTrash />
+      </button>
+
+      <button onClick={() => toggleInput()} style={{ cursor: 'pointer' }}>
         <BiPencil />
       </button>
     </li>

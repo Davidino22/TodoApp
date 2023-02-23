@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import './footer.css';
 import ClearButton from './clearbutton';
+import { useThemeContext } from './themeProvider.js';
 
 function counttodos(todo) {
   return {
@@ -15,6 +16,8 @@ function TodoCounter(props) {
   const { todos, status, setStatus, setTodos } = props;
 
   const [notCompleted, setNotCompleted] = useState(0);
+
+  const lightMode = useThemeContext();
 
   // filter between completed todos and not completed todos with cheackking the bolean status
 
@@ -38,19 +41,25 @@ function TodoCounter(props) {
       <div className="counterButtons">
         <button
           onClick={() => changeStatus('All')}
-          className={`button ${status === 'All' ? 'btnClicked' : ''}`}
+          className={`button ${status === 'All' ? 'btnClicked' : ''}  ${
+            lightMode ? 'buttonLight' : ''
+          }`}
         >
           All
         </button>
         <button
           onClick={() => changeStatus('Active')}
-          className={`button ${status === 'Active' ? 'btnClicked' : ''}`}
+          className={`button ${status === 'Active' ? 'btnClicked' : ''}  ${
+            lightMode ? 'buttonLight' : ''
+          }`}
         >
           Active
         </button>
         <button
           onClick={() => changeStatus('Completed')}
-          className={`button ${status === 'Completed' ? 'btnClicked' : ''}`}
+          className={`button ${status === 'Completed' ? 'btnClicked' : ''}  ${
+            lightMode ? 'buttonLight' : ''
+          }`}
         >
           Completed
         </button>

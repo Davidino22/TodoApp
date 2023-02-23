@@ -6,3 +6,12 @@
   color: white;
   border-radius: 8px;
 }
+
+.buttonClearLight {
+  background-color: #94b5fbcd;
+  color: #2d322f;
+}
+
+.buttonClear:active {
+  transform: scale(0.9);
+}
